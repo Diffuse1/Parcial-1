@@ -1,4 +1,5 @@
 import csv
+
 class Tablaestudiantes():
     with open('Datos1.csv') as per:
         reader=csv.reader(per)

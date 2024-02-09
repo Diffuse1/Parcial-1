@@ -7,10 +7,10 @@ class Estudiante:
         self.edad = edad
         self.calificaciones = []
 
-    def agregar_calificacion(self, calificacion):
+    def agregarcalificacion(self, calificacion):
         self.calificaciones.append(calificacion)
 
-    def obtener_promedio(self):
+    def obtenerpromedio(self):
         if not self.calificaciones:
             return 0
         return sum(self.calificaciones) / len(self.calificaciones)
@@ -22,10 +22,10 @@ class EstudianteGraduado(Estudiante):
         self.tesis = None
 
     def graduarse(self):
-        promedio_final = self.obtener_promedio()
+        promedio_final = self.obtenerpromedio()
         return promedio_final >= 6.0
 
-    def set_fecha_tesis(self, fecha, nombretesis):
+    def setfechatesis(self, fecha, nombretesis):
         self.fechagraduacion = fecha
         self.tesis = nombretesis
 
