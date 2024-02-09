@@ -1,17 +1,31 @@
-import csv
+
 print('                     \033[32mCalificaciones de estudiantes de actuaría UTECA\033[0m')
-class Tablaestudiantes():
-    with open('Datos1.csv') as per:
-        reader=csv.reader(per)
-        for fila in reader:
-            print(f'|{fila[0]}|{fila[1]}|{fila[2]}|{fila[3]}|{fila[4]}|{fila[5]}|{fila[6]}|{fila[7]}|{fila[8]}|{fila[9]}|{fila[10]}|{fila[11]}')
+class Estudiante:
+    def __init__(self, matricula, nombre, edad):
+        self.matricula = matricula
+        self.nombre = nombre
+        self.edad = edad
+        self.calificaciones = []
 
-print('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
-class Informaciónestudiantes():
-    print('                               \033[36mDatos estudiantes de actuaría UTECA\033[0m')
-    with open('Datos.csv') as Lista:
-        reader=csv.reader(Lista)
-        for fila in reader:
-            print(f'Matricula: {fila[0]} Nombre: {fila[1]} Edad: {fila[2]} Cal.1: {fila[3]} Cal.2: {fila[4]} Cal.3: {fila[5]} Cal.4: {fila[6]} Cal.5: {fila[7]} Promedio: {fila[8]} Graduado: {fila[9]} fecha Graduación: {fila[10]} Tesis: {fila[11]}')
+    def agregar_calificacion(self, calificacion):
+        self.calificaciones.append(calificacion)
 
+    def obtener_promedio(self):
+        if not self.calificaciones:
+            return 0
+        return sum(self.calificaciones) / len(self.calificaciones)
+
+class EstudianteGraduado(Estudiante):
+    def __init__(self, matricula, nombre, edad):
+        super().__init__(matricula, nombre, edad)
+        self.fecha_graduacion = None
+        self.tesis = None
+
+    def graduarse(self):
+        promedio_final = self.obtener_promedio()
+        return promedio_final >= 6.0
+
+    def set_fecha_tesis(self, fecha, nombre_tesis):
+        self.fecha_graduacion = fecha
+        self.tesis = nombre_tesis
 
