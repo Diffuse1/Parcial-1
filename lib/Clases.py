@@ -18,14 +18,14 @@ class Estudiante:
 class EstudianteGraduado(Estudiante):
     def __init__(self, matricula, nombre, edad):
         super().__init__(matricula, nombre, edad)
-        self.fecha_graduacion = None
+        self.fechagraduacion = None
         self.tesis = None
 
     def graduarse(self):
         promedio_final = self.obtener_promedio()
         return promedio_final >= 6.0
 
-    def set_fecha_tesis(self, fecha, nombre_tesis):
-        self.fecha_graduacion = fecha
-        self.tesis = nombre_tesis
+    def set_fecha_tesis(self, fecha, nombretesis):
+        self.fechagraduacion = fecha
+        self.tesis = nombretesis
 

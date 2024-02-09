@@ -10,15 +10,15 @@ def tabla(estudiante):
         tabla += f"\033[38;2;255;0;0m{calificacion:^4}\033[0m" if color == 'red' else f"\033[38;2;0;0;0m{calificacion:^4}\033[0m"
 
     promedio = estudiante.obtener_promedio()
-    color_promedio = '\033[48;2;255;0;0m' if promedio <= 5.9 else '\033[48;2;255;255;255m'
-    tabla += f"|{promedio:^15}{color_promedio}|"
+    colorpromedio = '\033[48;2;255;0;0m' if promedio <= 5.9 else '\033[48;2;255;255;255m'
+    tabla += f"|{promedio:^15}{colorpromedio}|"
 
     graduado = 'Si' if isinstance(estudiante, EstudianteGraduado) and estudiante.graduarse() else 'No'
     tabla += f"{graduado:^10}|"
 
-    fecha_graduación = estudiante.fecha_graduacion if estudiante.fecha_graduacion else 'N/A'
-    nombre_tesis = estudiante.tesis if estudiante.tesis else 'N/A'
-    tabla += f"{fecha_graduación:^15}|{nombre_tesis:^30}|"
+    fechagraduación = estudiante.fechagraduacion if estudiante.fechagraduacion else 'N/A'
+    nombretesis = estudiante.tesis if estudiante.tesis else 'N/A'
+    tabla += f"{fechagraduación:^15}|{nombretesis:^30}|"
 
     return tabla
 
@@ -31,7 +31,7 @@ def información(estudiante):
         texto += f"¿Se gradúa? {graduado} "
 
         if estudiante.graduarse():
-            texto += f"Fecha de graduación: {estudiante.fecha_graduacion} "
+            texto += f"Fecha de graduación: {estudiante.fechagraduacion} "
             texto += f"Nombre de la tesis: {estudiante.tesis}"
         else:
             texto += "Estudiante No Graduado"
@@ -39,15 +39,15 @@ def información(estudiante):
     return texto
 
 if __name__ == "__main__":
-    estudiante1 = EstudianteGraduado("123", "Juan Perez", 22)
-    estudiante1.agregar_calificacion(8)
-    estudiante1.agregar_calificacion(7)
-    estudiante1.agregar_calificacion(6)
+    estudiante1 = EstudianteGraduado("601049", "Zaira Acosta", 35)
+    estudiante1.agregar_calificacion(10)
     estudiante1.agregar_calificacion(9)
-    estudiante1.agregar_calificacion(5)
+    estudiante1.agregar_calificacion(8)
+    estudiante1.agregar_calificacion(10)
+    estudiante1.agregar_calificacion(9)
 
     if isinstance(estudiante1, EstudianteGraduado):
-        estudiante1.set_fecha_tesis("2024-02-09", "Tesis de Graduación")
+        estudiante1.set_fecha_tesis("01/07/2013", "Los neutrinos saben a jugo de Uvas")
         
     estudiante2 = EstudianteGraduado("601048", "Durán frine", 34)
     estudiante2.agregar_calificacion(6)
@@ -58,9 +58,9 @@ if __name__ == "__main__":
 
     if isinstance(estudiante2, EstudianteGraduado):
         estudiante2.set_fecha_tesis("N/A", "N/A")
-    print(formatear_tabla(estudiante1))
-    print(formatear_tabla(estudiante2))
-    print(formatear_texto(estudiante1))
-    print(formatear_texto(estudiante2))
+    print(tabla(estudiante1))
+    print(tabla(estudiante2))
+    print(información(estudiante1))
+    print(información(estudiante2))
 
 
