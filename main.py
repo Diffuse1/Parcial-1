@@ -1,3 +1,3 @@
 from padre import *
 
-print('l')
+print('li')
