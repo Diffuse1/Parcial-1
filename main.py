@@ -1,3 +1,3 @@
-from padre import *
+from lib import *
 
 print('liñ')
