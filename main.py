@@ -77,7 +77,7 @@ if __name__ == "__main__":
     estudiante4.agregarcalificacion(8)
 
     if isinstance(estudiante4, EstudianteGraduado):
-        estudiante4.setfechatesis("05/01/2026", "N/A")
+        estudiante4.setfechatesis("05/01/2026", "Es cuestion de logica")
     #Cuarto Alimno
     estudiante5 = EstudianteGraduado("100692", "Lopez Evelyn", 20)
     estudiante5.agregarcalificacion(10)
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     estudiante5.agregarcalificacion(5)
     estudiante5.agregarcalificacion(9)
     if isinstance(estudiante5, EstudianteGraduado):
-         estudiante5.setfechatesis("05/01/2027", "N/A")
+         estudiante5.setfechatesis("05/01/2027", "Dios soy yo de nuevo")
 
     #Quinto Alumno
     estudiante6 = EstudianteGraduado("99999", "Rojas Daniel", 20)
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     estudiante7.agregarcalificacion(8)
 
     if isinstance(estudiante7, EstudianteGraduado):
-        estudiante7.setfechatesis("08/01/2026", "N/A")
+        estudiante7.setfechatesis("08/01/2026", "Que sea lo que dios quiera")
     #Septimo Alumno
     estudiante8 = EstudianteGraduado("100437", "Villegas Annibal", 20)
     estudiante8.agregarcalificacion(10)
@@ -117,7 +117,7 @@ if __name__ == "__main__":
     estudiante8.agregarcalificacion(10)
 
     if isinstance(estudiante8, EstudianteGraduado):
-        estudiante8.setfechatesis("12/01/2026", "N/A")
+        estudiante8.setfechatesis("12/01/2026", "Quien estudia es porque duda de sus concimientos")
     #Octavo Alumno
 print(tabla(estudiante1))
 print(tabla(estudiante2))
