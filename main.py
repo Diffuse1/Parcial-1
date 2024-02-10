@@ -31,7 +31,7 @@ def información(estudiante):
 
         if estudiante.graduarse():
             texto += f"Fecha de graduación: {estudiante.fechagraduacion} "
-            texto += f"Nombre de la tesis: {estudiante.tesis}"
+            texto += f"tesis: {estudiante.tesis}"
         else:
             texto += "Estudiante No Graduado"
 
